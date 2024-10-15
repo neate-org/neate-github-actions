@@ -1,0 +1,26 @@
+# general things to ignore
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
+debug.log
+
+# due to using tox and pytest
+.tox
+.cache
+
+*.tgz
+
+.vscode/
+.vscode/
+docker-compose.build.*.yml
+docker-compose.test.*.yml
+docker-compose.publish.*.yml
+.idea/
+temp/
+private.env
+~$*
