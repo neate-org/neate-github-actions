@@ -10,6 +10,11 @@ on:
       PRIVATE_REPO_TOKEN:
         required: true
     inputs:
+      commands:
+        type: string
+        description: "Dbm commands separated by spaces"
+        required: false
+        default: "-build -test"
       sections:
         type: string
         description: "Dbm sections separated by spaces"
@@ -27,6 +32,10 @@ on:
         default: "docker.io"
   workflow_dispatch:
     inputs:
+      commands:
+        description: "Dbm commands separated by spaces"
+        required: false
+        default: "-build -test"
       sections:
         description: "Dbm sections separated by spaces"
         required: false
@@ -87,4 +96,4 @@ jobs:
       - name: Verify
         shell: bash
         run: |
-          dbm -build -test ${{ inputs.sections }}
+          dbm ${{ inputs.commands }} ${{ inputs.sections }}

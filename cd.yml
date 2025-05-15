@@ -21,8 +21,8 @@ jobs:
     with:
       images: "neateas/image-name"
       environment: ${{ github.event.inputs.environment || 'prod' }}
+      commands: "-build -publish"
       sections: "service"
-      slack: "dummy"
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
