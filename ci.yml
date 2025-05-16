@@ -20,4 +20,3 @@ jobs:
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      PRIVATE_REPO_TOKEN: ${{ secrets.GIT_REPO_API_TOKEN }}
