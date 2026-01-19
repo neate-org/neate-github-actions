@@ -55,6 +55,11 @@ on:
         description: 'Slack incoming webhook url'
         required: false
         default: 'dummy'
+      extraDeploymentArguments:
+        type: string
+        description: 'Extra arguments to pass to deployment'
+        required: false
+        default: ''
   workflow_dispatch:
     inputs:
       charts:
@@ -93,6 +98,10 @@ on:
         description: 'Slack incoming webhook url'
         required: false
         default: 'dummy'
+      extraDeploymentArguments:
+        description: 'Extra arguments to pass to deployment'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -162,5 +171,6 @@ jobs:
                 images: '${{ inputs.images }}:'+process.env.IMAGE_TAG,
                 environment: '${{ inputs.environment }}',
                 slack: '${{ inputs.slack }}',
+                extraArguments: '${{ inputs.extraDeploymentArguments }}',
               },
             })
